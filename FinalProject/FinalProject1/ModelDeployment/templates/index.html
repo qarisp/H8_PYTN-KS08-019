@@ -36,33 +36,38 @@
     </center>
 
     <div id="portfolio">
-             <div id="team">
-                 <h1>Team</h1>   
-                 <div id="team" class="section wb" data-aos="zoom-in">
-                    <div class="container">
-                        <div class="section-title text-center">
-                            <h3>The Team</h3>
-                            <p>This Final Project 1 was made by:</p>
-                        </div><!-- end title -->
-            
-                        <div class="row">
-                            <div class="col-sm">
-                                <div class="our-team">
-                                    <div class="pic">
-                                        <img src="{{ url_for('static', filename='images/images.jpeg') }}">
-                                    </div>
-                                    <div class="team-content">
-                                        <h3 class="title">Qaris Ardian Pratama</h3>
-                                        <span class="post">PYTN-KS04-019</span>
-                                    </div>
-                                </div>
-                            </div>
+             <section id="team" class="team section-bg">
+                <div class="container" data-aos="fade-up">
+          
+                  <div class="section-title">
+                    <h2>Team</h2>
+                    <p>This Final Project 1 was made by:</p>
+                  </div>
+          
+                  <div class="row">
+          
+                    <div class="col-lg-6">
+                      <div class="member d-flex align-items-start" data-aos="zoom-in">
+                        <div class="pic"><img src="{{ url_for('static', filename='images/images.jpeg') }}" class="img-fluid"
+                            alt=""></div>
+                        <div class="member-info">
+                          <h4>Qaris Ardian Pratama</h4>
+                          <span>Studi Independen</span>
+                          <p>PYTN-KS04-019</p>
+                          <div class="social">
+                            <a href="https://github.com/zulvaaf"><i class="fa-brands fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/ahmadfirdauszulva111/"><i class="fa-brands fa-linkedin"></i></a>
+                          </div>
                         </div>
+                      </div>
                     </div>
-                 </div>
-             </div>
+          
+                  </div>
+          
+                </div>
+              </section>
 
-             <div id="about">
+              <div id="about">
                 <h1>About</h1>   
                 <div class="container">
                     <div class="row">
@@ -74,14 +79,7 @@
                                         data.
                                     </p>
                                 </div><!-- end title -->
-                                <nav>
-                                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home"
-                                            role="tab" aria-controls="nav-home" aria-selected="true">Data</a>
-                                        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile"
-                                            role="tab" aria-controls="nav-profile" aria-selected="false">Abstract</a>
-                                    </div>
-                                </nav>
+
                                 <div class="tab-content mt-3" id="nav-tabContent">
                                     <div class="tab-pane fade show active" id="nav-home" role="tabpanel"
                                         aria-labelledby="nav-home-tab">
@@ -353,6 +351,194 @@
 
              </div>
 
+             <!-- ======= Chart Section ======= -->
+    <section id="portfolio" class="portfolio">
+        <div class="container" data-aos="fade-up">
+  
+          <div class="section-title">
+            <h2>Chart</h2>
+            <p>A chart can represent tabular numeric data, functions or some kinds of quality structure and provides
+              different info.</p>
+          </div>
+  
+          <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up">
+            <li data-filter="*" class="filter-active">All Graphic Plot</li>
+            <li data-filter=".filter-app">Prediction Graph using the SMOTE method</li>
+            <li data-filter=".filter-card">Prediction Graph does not use the SMOTE method</li>
+            <li data-filter=".filter-web">Random Plot</li>
+          </ul>
+  
+          <div class="row portfolio-container" data-aos="fade-up">
+  
+            <!-- Chart Section 1 -->
+            <div>
+              <!-- d-1 -->
+              <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                <div class="portfolio-img"><img src="{{ url_for('static', filename='images/ubervslyft_bar.png') }}"
+                    class="img-fluid" alt="">
+                </div>
+                <div class="portfolio-info">
+                  <h4>Extra Trees Classifier</h4>
+                  <p>Dengan menggunakan metode SMOTE</p>
+                </div>
+              </div>
+              <!-- d-2 -->
+              <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                <div class="portfolio-img"><img src="{{ url_for('static', filename='img/portfolio/smote_knn.png') }}"
+                    class="img-fluid" alt=""></div>
+                <div class="portfolio-info">
+                  <h4>KNN Classifier</h4>
+                  <p>Dengan menggunakan metode SMOTE</p>
+                </div>
+              </div>
+              <!-- d-3 -->
+              <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                <div class="portfolio-img"><img src="{{ url_for('static', filename='img/portfolio/smote_svm.png') }}"
+                    class="img-fluid" alt="">
+                </div>
+                <div class="portfolio-info">
+                  <h4>SVM Classifier</h4>
+                  <p>Dengan menggunakan metode SMOTE</p>
+                </div>
+              </div>
+              <!-- d-4 -->
+              <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                <div class="portfolio-img"><img src="{{ url_for('static', filename='img/portfolio/smote_rf.png') }}"
+                    class="img-fluid" alt=""></div>
+                <div class="portfolio-info">
+                  <h4>Random Forest Classifier</h4>
+                  <p>Dengan menggunakan metode SMOTE</p>
+                </div>
+              </div>
+              <!-- d-5 -->
+              <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                <div class="portfolio-img"><img src="{{ url_for('static', filename='img/portfolio/smote_logreg.png') }}"
+                    class="img-fluid" alt="">
+                </div>
+                <div class="portfolio-info">
+                  <h4>Logistic Regression Classifier</h4>
+                  <p>Dengan menggunakan metode SMOTE</p>
+                </div>
+              </div>
+              <!-- d-6 -->
+              <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                <div class="portfolio-img"><img src="{{ url_for('static', filename='img/portfolio/smote_xgboost.png') }}"
+                    class="img-fluid" alt="">
+                </div>
+                <div class="portfolio-info">
+                  <h4>XGBooster Classifier</h4>
+                  <p>Dengan menggunakan metode SMOTE</p>
+                </div>
+              </div>
+              <!-- d-7 -->
+              <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                <div class="portfolio-img"><img src="{{ url_for('static', filename='img/portfolio/smote_gb.png') }}"
+                    class="img-fluid" alt="">
+                </div>
+                <div class="portfolio-info">
+                  <h4>Gradient Booster Classifier</h4>
+                  <p>Dengan menggunakan metode SMOTE</p>
+                </div>
+              </div>
+              <!-- end of chart section - section 1 -->
+            </div>
+  
+            <!-- Chart Section 2 -->
+            <div>
+              <!-- a-1 -->
+              <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                <div class="portfolio-img"><img src="{{ url_for('static', filename='img/portfolio/etc.png') }}"
+                    class="img-fluid" alt=""></div>
+                <div class="portfolio-info">
+                  <h4>Extra Trees Classifier</h4>
+                  <p>Tidak menggunaan metode SMOTE</p>
+                </div>
+              </div>
+              <!-- a-2 -->
+              <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                <div class="portfolio-img"><img src="{{ url_for('static', filename='img/portfolio/knn.png') }}"
+                    class="img-fluid" alt=""></div>
+                <div class="portfolio-info">
+                  <h4>KNN Classifier</h4>
+                  <p>Tidak menggunaan metode SMOTE</p>
+                </div>
+              </div>
+              <!-- a-3 -->
+              <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                <div class="portfolio-img"><img src="{{ url_for('static', filename='img/portfolio/svm.png') }}"
+                    class="img-fluid" alt="">
+                </div>
+                <div class="portfolio-info">
+                  <h4>SVM Classifier</h4>
+                  <p>Tidak menggunaan metode SMOTE</p>
+                </div>
+              </div>
+              <!-- a-4 -->
+              <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                <div class="portfolio-img"><img src="{{ url_for('static', filename='img/portfolio/rf.png') }}"
+                    class="img-fluid" alt=""></div>
+                <div class="portfolio-info">
+                  <h4>Random Forest Classifier</h4>
+                  <p>Tidak menggunaan metode SMOTE</p>
+                </div>
+              </div>
+              <!-- a-5 -->
+              <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                <div class="portfolio-img"><img src="{{ url_for('static', filename='img/portfolio/logreg.png') }}"
+                    class="img-fluid" alt="">
+                </div>
+                <div class="portfolio-info">
+                  <h4>Logistic Regression Classifier</h4>
+                  <p>Tidak menggunaan metode SMOTE</p>
+                </div>
+              </div>
+              <!-- a-6 -->
+              <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                <div class="portfolio-img"><img src="{{ url_for('static', filename='img/portfolio/xgboost.png') }}"
+                    class="img-fluid" alt="">
+                </div>
+                <div class="portfolio-info">
+                  <h4>XGBooster Classifier</h4>
+                  <p>Tidak menggunaan metode SMOTE</p>
+                </div>
+              </div>
+              <!-- a-7 -->
+              <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                <div class="portfolio-img"><img src="{{ url_for('static', filename='img/portfolio/gb.png') }}"
+                    class="img-fluid" alt="">
+                </div>
+                <div class="portfolio-info">
+                  <h4>Gradient Booster Classifier</h4>
+                  <p>Tidak menggunaan metode SMOTE</p>
+                </div>
+              </div>
+              <!-- end of chart section - section 2 -->
+            </div>
+  
+            <!-- Chart Section 3 -->
+            <div>
+              <!-- b-1 -->
+              <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                <div class="portfolio-img"><img src="{{ url_for('static', filename='img/portfolio/corr.png') }}"
+                    class="img-fluid" alt=""></div>
+                <div class="portfolio-info">
+                  <h4>Correlation Plot</h4>
+                </div>
+              </div>
+              <!-- b-2 -->
+              <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                <div class="portfolio-img"><img src="{{ url_for('static', filename='img/portfolio/hist_dist.png') }}"
+                    class="img-fluid" alt=""></div>
+                <div class="portfolio-info">
+                  <h4>Distribution Plot</h4>
+                </div>
+              </div>
+              <!-- end of chart section - section 3 -->
+            </div>
+          </div>
+        </div>
+      </section><!-- End Chart Section -->
+
              <div id="prediction">
                 <h1>Prediction.</h1> 
                 <div class="tab-content" id="v-pills-tabContent">
@@ -535,8 +721,11 @@
 								</form>
 							</div>
                 </div>
+                
              </div>
          
+             
+
               <div id="contact">
                  <h1>contact.</h1> 
                  <form>
