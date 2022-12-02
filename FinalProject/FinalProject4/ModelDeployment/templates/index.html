@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Final Project 4</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/css/index.css">
+</head>
+<body>
+    <div id="loading">
+        <div id="spinner"></div>
+    </div>
+    <div id="magnify">
+        <h1 onclick="closemagnify()"><i class="fas fa-times"></i></h1>
+        <div id="img_here"></div>
+    </div>
+    <header id="header" class="animated slideInDown" style="animation-delay:1.8s;">
+        <table>
+            <tr>
+                <td id="logo">Final Project 4.</td>
+                <td id="navigation">
+                    <a href="#team">Team.</a>
+                    <a href="#bio">About.</a>
+                    <a href="#work">Plots.</a>
+                    <a href="#contact">Prediction.</a>
+                </td>
+            </tr>
+        </table>
+    </header>
+    <table id="top_part">
+        <tr>
+            <td id="about" class="animated slideInLeft" style="animation-delay:2s;">
+                <h1>Clustering</h1>
+                <!--<button class="btn_one">Contact</button><br>-->
+                <table>
+                    <tr>
+                        <td class="animated zoomIn" style="animation-delay:2.2s;"><a class="social" href="https://github.com/qarisp"><i class="fab fa-github"></i></a></td>
+                        <td class="animated zoomIn" style="animation-delay:2.4s;"><a class="social" href="https://www.linkedin.com/in/qaris-pratama-640960207/"><i class="fab fa-linkedin"></i></a></td>
+                        <td class="animated zoomIn" style="animation-delay:2.6s;"><a class="social" href="https://instagram.com/_qarisp"><i class="fab fa-instagram"></i></a></td>
+                    </tr>
+                </table>
+            </td>
+            <td id="rightImage" class="animated jackInTheBox" style="animation-delay:2.2s;"></td>
+        </tr>
+    </table>
+    <section id="team" class="team">
+        <div class="container">
+            <div class="section-title text-center">
+                <h1>The Team.</h1>
+                <p>This project is presented by:</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <div class="our-team">
+                    <div class="pic">
+                        <img src="{{ url_for('static', filename='images/qarisp.png') }}" class="center">
+                    </div>
+                    <div class="team-content">
+                        <h3 class="title">Qaris Ardian Pratama</h3>
+                        <span class="post">PYTN-KS08-019</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="bio" class="bio">
+        <h1>About.</h1>
+        <h3 style="text-align: center;font-weight:bolder;" class="text-muted">Abstract</h3>
+        <p style="text-align: justify;">
+            Kartu kredit merupakan alat pembayaran berupa kartu seperti kartu debit.
+			Akan tetapi, cara kerja kartu kredit adalah pembayaran dalam suatu transaksi
+			akan ditanggung oleh penerbit kartu terlebih dahulu. Dalam jangka waktu yang
+			sudah disepakati, pemilik atau pemegang kartu kredit wajib melunasinya.
+			<br>
+			<br>
+			Dataset ini akan digunakan untuk membuat segmentasi pelanggan yang nantinya
+			digunakan untuk strategi marketing. Rentang waktu pada dataset adalah 6 bulan
+			dengan sekitar 9000 data. Clustering merupakan kegiatan mengelompokkan objek
+			sehingga setiap kumpulan objek memiliki suatu kesamaan.
+        </p>
+        <h3 style="text-align: center;font-weight:bolder;" class="text-muted">Dataset</h3>
+        <p style="text-align: justify;">
+            Dataset yang digunakan yaitu <a href="https://www.kaggle.com/datasets/arjunbhasin2013/ccdata"
+			style="text-decoration: none;"><b style="font-style: italic">Credit Card Dataset for Clustering</b></a> :
+			<br><br>
+			Dataset ini terdiri dari 13 atribut dengan 299 rows. Dalam kasus ini target dari hasil prediksi
+			keselamatan pasien dari penyakit jantung adalah DEATH_EVENT atau kematian
+        </p>
+        <table class="table table-white table-bordered border-4 border-white">
+			<thead>
+			  <tr style="text-align: center">
+				<th style="text-align: center" scope="col">No</th>
+				<th style="text-align: center" scope="col">Column Name</th>
+				<th style="text-align: center" scope="col">Keterangan</th>
+			  </tr>
+			</thead>
+			<tbody>
+			  <!-- 1 -->
+			  <tr>
+				<th style="text-align: center" scope="row">1</th>
+				<td>CUSTID</td>
+				<td>Identification of Credit Card holder (Categorical)</td>
+			  </tr>
+			  <!-- 2 -->
+			  <tr>
+				<th style="text-align: center" scope="row">2</th>
+				<td>BALANCE</td>
+				<td>Balance amount left in their account to make purchases</td>
+			  </tr>
+			  <!-- 3 -->
+			  <tr>
+				<th style="text-align: center" scope="row">3</th>
+				<td>BALANCEFREQUENCY</td>
+				<td>How frequently the Balance is updated, score between 0 and 1 (1 = frequently updated, 0 = not
+				  frequently updated)</td>
+			  </tr>
+			  <!-- 4 -->
+			  <tr>
+				<th style="text-align: center" scope="row">4</th>
+				<td>PURCHASES</td>
+				<td>Amount of purchases made from account</td>
+			  </tr>
+			  <!-- 5 -->
+			  <tr>
+				<th style="text-align: center" scope="row">5</th>
+				<td>ONEOFFPURCHASES</td>
+				<td>Maximum purchase amount done in one-go</td>
+			  </tr>
+			  <!-- 6 -->
+			  <tr>
+				<th style="text-align: center" scope="row">6</th>
+				<td>INSTALLMENTSPURCHASES</td>
+				<td>Amount of purchase done in installment</td>
+			  </tr>
+			  <!-- 7 -->
+			  <tr>
+				<th style="text-align: center" scope="row">7</th>
+				<td>CASHADVANCE</td>
+				<td>Cash in advance given by the user</td>
+			  </tr>
+			  <!-- 8 -->
+			  <tr>
+				<th style="text-align: center" scope="row">8</th>
+				<td>PURCHASESFREQUENCY</td>
+				<td>How frequently the Purchases are being made, score between 0 and 1 (1 = frequently purchased,
+				  0 = not frequently purchased)</td>
+			  </tr>
+			  <!-- 9 -->
+			  <tr>
+				<th style="text-align: center" scope="row">9</th>
+				<td>ONEOFFPURCHASESFREQUENCY</td>
+				<td>How frequently Purchases are happening in one-go (1 = frequently purchased, 0 = not frequently
+				  purchased)</td>
+			  </tr>
+			  <!-- 10 -->
+			  <tr>
+				<th style="text-align: center" scope="row">10</th>
+				<td>PURCHASESINSTALLMENTSFREQUENCY</td>
+				<td>How frequently purchases in installments are being done (1 = frequently done, 0 = not
+				  frequently done)</td>
+			  </tr>
+			  <!-- 11 -->
+			  <tr>
+				<th style="text-align: center" scope="row">11</th>
+				<td>CASHADVANCEFREQUENCY</td>
+				<td>How frequently the cash in advance being paid</td>
+			  </tr>
+			  <!-- 12 -->
+			  <tr>
+				<th style="text-align: center" scope="row">12</th>
+				<td>CASHADVANCETRX</td>
+				<td>Number of Transactions made with style="text-align: center""Cash in Advance"</td>
+			  </tr>
+			  <!-- 13 -->
+			  <tr>
+				<th style="text-align: center" scope="row">13</th>
+				<td>PURCHASESTRX</td>
+				<td>Number of purchase transactions made</td>
+			  </tr>
+			  <!-- 14 -->
+			  <tr>
+				<th style="text-align: center" scope="row">14</th>
+				<td>CREDITLIMIT</td>
+				<td>Limit of Credit Card for user</td>
+			  </tr>
+			  <!-- 15 -->
+			  <tr>
+				<th style="text-align: center" scope="row">15</th>
+				<td>PAYMENTS</td>
+				<td>Amount of Payment done by user</td>
+			  </tr>
+			  <!-- 16 -->
+			  <tr>
+				<th style="text-align: center" scope="row">16</th>
+				<td>MINIMUM_PAYMENTS</td>
+				<td>Minimum amount of payments made by user</td>
+			  </tr>
+			  <!-- 17 -->
+			  <tr>
+				<th style="text-align: center" scope="row">17</th>
+				<td>PRCFULLPAYMENT</td>
+				<td>Percent of full payment paid by user</td>
+			  </tr>
+			  <!-- 18 -->
+			  <tr>
+				<th style="text-align: center" scope="row">18</th>
+				<td>TENURE</td>
+				<td>Tenure of credit card service for user</td>
+			  </tr>
+			</tbody>
+		</table>
+    </div>
+    <div id="work">
+        <h1>Plots.</h1>
+        <div id="photos">
+            <img onclick="magnify($(this).attr('src'))" src="static/images/missing_value_1.png">
+            <img onclick="magnify($(this).attr('src'))" src="static/images/missing_value_2.png">
+            <img onclick="magnify($(this).attr('src'))" src="static/images/skewness.png">
+            <img onclick="magnify($(this).attr('src'))" src="static/images/feat_corr_heatmap.png">
+            <img onclick="magnify($(this).attr('src'))" src="static/images/elbow_2.png">
+            <img onclick="magnify($(this).attr('src'))" src="static/images/elbow.png">
+            <img onclick="magnify($(this).attr('src'))" src="static/images/knn_1.png">
+            <img onclick="magnify($(this).attr('src'))" src="static/images/knn_2.png">
+            <img onclick="magnify($(this).attr('src'))" src="static/images/dendogram_1.png">
+            <img onclick="magnify($(this).attr('src'))" src="static/images/dendogram_2.png">
+            <img onclick="magnify($(this).attr('src'))" src="static/images/hier.png">
+        </div>
+    </div>
+    <div id="contact" class="contact">
+        <h1>Prediction.</h1>
+        <div class="container-sm">
+			<p>This prediction will be using K-Nearest Neighbor model.</p>
+			<div class="row">
+
+				
+	  
+				<div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+				  <form action="{{ url_for('predict')}}" method="post" class="php-email-form">
+					<div class="row">
+					  <div class="form-group">
+						<label for="BALANCE">Balance</label>
+						<input type="text" class="form-control" name="BALANCE" id="BALANCE"
+						  placeholder="Insert Balance Value - Range (0 - 19043)" required>
+					  </div>
+					  <div class="form-group">
+						<label for="BALANCE_FREQUENCY">Balance Frequency</label>
+						<input type="text" class="form-control" name="BALANCE_FREQUENCY" id="BALANCE_FREQUENCY"
+						  placeholder="Insert Balance Frequency Value - Range (0.0 - 1.0)" required>
+					  </div>
+					  <div class="form-group">
+						<label for="PURCHASES">Purchases</label>
+						<input type="text" class="form-control" name="PURCHASES" id="PURCHASES"
+						  placeholder="Insert value Purchases - Range (0 - 49039)" required>
+					  </div>
+					  <div class="form-group">
+						<label for="ONEOFF_PURCHASES">OneOff Purchases</label>
+						<input type="text" class="form-control" name="ONEOFF_PURCHASES" id="ONEOFF_PURCHASES"
+						  placeholder="Insert value OneOff Purchases - Range (0 - 40761)" required>
+					  </div>
+					  <div class="form-group">
+						<label for="INSTALLMENTS_PURCHASES">Installments Purchases</label>
+						<input type="text" class="form-control" name="INSTALLMENTS_PURCHASES" id="INSTALLMENTS_PURCHASES"
+						  placeholder="Insert value Installments Purchases - Range (0 - 22500)" required>
+					  </div>
+					  <div class="form-group">
+						<label for="CASH_ADVANCE">Cash advance</label>
+						<input type="text" class="form-control" name="CASH_ADVANCE" id="CASH_ADVANCE"
+						  placeholder="Insert value Cash advance - Range (0 - 47137)" required>
+					  </div>
+					  <div class="form-group">
+						<label for="PURCHASES_FREQUENCY">Purchases Frequency</label>
+						<input type="text" class="form-control" name="PURCHASES_FREQUENCY" id="PURCHASES_FREQUENCY"
+						  placeholder="Insert value Purchases Frequency - Range (0.0 - 1.0)" required>
+					  </div>
+					  <div class=" form-group">
+						<label for="ONEOFF_PURCHASES_FREQUENCY">OneOff Purchases Frequency</label>
+						<input type="text" class="form-control" name="ONEOFF_PURCHASES_FREQUENCY"
+						  id="ONEOFF_PURCHASES_FREQUENCY"
+						  placeholder="Insert value OneOff Purchases Frequency - Range (0.0 - 1.0)" required>
+					  </div>
+					  <div class=" form-group">
+						<label for="PURCHASES_INSTALLMENTS_FREQUENCY">Purchases Installments Frequency</label>
+						<input type="text" class="form-control" name="PURCHASES_INSTALLMENTS_FREQUENCY"
+						  id="PURCHASES_INSTALLMENTS_FREQUENCY"
+						  placeholder="Insert value Purchases Installments Frequency - Range (0.0 - 1.0)" required>
+					  </div>
+					  <div class=" form-group">
+						<label for="CASH_ADVANCE_FREQUENCY">Cash Advance Frequency</label>
+						<input type="text" class="form-control" name="CASH_ADVANCE_FREQUENCY" id="CASH_ADVANCE_FREQUENCY"
+						  placeholder="Insert value Cash Advance Frequency - Range (0.0 - 1.5)" required>
+					  </div>
+					  <div class=" form-group">
+						<label for="CASH_ADVANCE_TRX">Cash Advance Transaction</label>
+						<input type="number" class="form-control" name="CASH_ADVANCE_TRX" id="CASH_ADVANCE_TRX"
+						  placeholder="Insert value Cash Advance Transaction - Range (0 - 123)" required min="0" max="123">
+					  </div>
+					  <div class="form-group">
+						<label for="PURCHASES_TRX">Purchases Transaction</label>
+						<input type="number" class="form-control" name="PURCHASES_TRX" id="PURCHASES_TRX"
+						  placeholder="Insert value Purchases Transaction - Range (0 - 358)" required min="0" max="358">
+					  </div>
+					  <div class="form-group">
+						<label for="CREDIT_LIMIT">Credit Limit</label>
+						<input type="text" class="form-control" name="CREDIT_LIMIT" id="CREDIT_LIMIT"
+						  placeholder="Insert Credit Limit - Range (50 - 30000)" required>
+					  </div>
+					  <div class="form-group">
+						<label for="PAYMENTS">Payments</label>
+						<input type="text" class="form-control" name="PAYMENTS" id="PAYMENTS"
+						  placeholder="Insert Payments - Range (0 - 50721)" required>
+					  </div>
+					  <div class="form-group">
+						<label for="MINIMUM_PAYMENTS">Minimum Payments</label>
+						<input type="text" class="form-control" name="MINIMUM_PAYMENTS" id="MINIMUM_PAYMENTS"
+						  placeholder="Insert Minimum Payments - Range (0 - 76406)" required>
+					  </div>
+					  <div class="form-group">
+						<label for="PRC_FULL_PAYMENT">Price Full Payment</label>
+						<input type="text" class="form-control" name="PRC_FULL_PAYMENT" id="PRC_FULL_PAYMENT"
+						  placeholder="Insert Price Full Payment - Range (0.0 - 1.0)" required">
+					  </div>
+					  <div class="form-group">
+						<label for="TENURE">Tenure</label>
+						<select class="form-select" aria-label="Default select example" name="TENURE" id="TENURE">
+						  <option selected>Choose for Tenure</option>
+						  <option value="6">6 Month</option>
+						  <option value="7">7 Month</option>
+						  <option value="8">8 Month</option>
+						  <option value="9">9 Month</option>
+						  <option value="10">10 Month</option>
+						  <option value="11">11 Month</option>
+						  <option value="12">12 Month</option>
+						</select>
+					  </div>
+					  <div class="col-lg-5 d-flex align-items-stretch">
+						<div class="info">
+						  <div class="address">
+							<h4>Hasil Prediksi</h4>
+							<p>{{ prediction_text }}</p>
+						  </div>
+						</div>
+					  </div>
+					  <div class="text-center"><button class="btn_one" type="submit">Predict</button></div>
+				  </form>
+				</div>
+	  
+			</div>
+		</div>
+    </div>
+    <div id="footer">
+        made on earth by a human <br> <a href="https://github.com/qarisp">qarisp</a>
+    </div>
+    <script src="static/js/index.js" type="text/javascript"></script>
+</body>
+</html>
