@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Final Project 3</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/css/index.css">
+</head>
+<body>
+    <div id="loading">
+        <div id="spinner"></div>
+    </div>
+    <div id="magnify">
+        <h1 onclick="closemagnify()"><i class="fas fa-times"></i></h1>
+        <div id="img_here"></div>
+    </div>
+    <header id="header" class="animated slideInDown" style="animation-delay:1.8s;">
+        <table>
+            <tr>
+                <td id="logo">Final Project 3.</td>
+                <td id="navigation">
+                    <a href="#team">Team.</a>
+                    <a href="#bio">About.</a>
+                    <a href="#work">Plots.</a>
+                    <a href="#contact">Prediction.</a>
+                </td>
+            </tr>
+        </table>
+    </header>
+    <table id="top_part">
+        <tr>
+            <td id="about" class="animated slideInLeft" style="animation-delay:2s;">
+                <h1>Ensemble</h1>
+                <!--<button class="btn_one">Contact</button><br>-->
+                <table>
+                    <tr>
+                        <td class="animated zoomIn" style="animation-delay:2.2s;"><a class="social" href="https://github.com/qarisp"><i class="fab fa-github"></i></a></td>
+                        <td class="animated zoomIn" style="animation-delay:2.4s;"><a class="social" href="https://www.linkedin.com/in/qaris-pratama-640960207/"><i class="fab fa-linkedin"></i></a></td>
+                        <td class="animated zoomIn" style="animation-delay:2.6s;"><a class="social" href="https://instagram.com/_qarisp"><i class="fab fa-instagram"></i></a></td>
+                    </tr>
+                </table>
+            </td>
+            <td id="rightImage" class="animated jackInTheBox" style="animation-delay:2.2s;"></td>
+        </tr>
+    </table>
+    <section id="team" class="team">
+        <div class="container">
+            <div class="section-title text-center">
+                <h1>The Team.</h1>
+                <p>This project is presented by:</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <div class="our-team">
+                    <div class="pic">
+                        <img src="{{ url_for('static', filename='images/qarisp.png') }}" class="center">
+                    </div>
+                    <div class="team-content">
+                        <h3 class="title">Qaris Ardian Pratama</h3>
+                        <span class="post">PYTN-KS08-019</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="bio" class="bio">
+        <h1>About.</h1>
+        <h3 style="text-align: center;font-weight:bolder;" class="text-muted">Abstract</h3>
+        <p style="text-align: justify;">
+            Cardiovascular disease (CVDs) merupakan penyebab kematian nomor 1 di dunia,
+			dengan angka kematian sekitar 17.9 juta per tahun. Jumlah itu merupakan 31%
+			dari penyebab kematian di seluruh dunia. CVDs merupakan penyebab paling umum
+			dari gagal jantung.
+			<br>
+			<br>
+			Sebagian besar penyakit cardiovascular dapat dicegah dengan mengubah gaya hidup
+			seperti rokok, pola makan, aktivitas fisik, alkohol, dll. Orang dengan CVDs atau
+			dengan resiko CVDs tinggi perlu dideteksi sejak dini. Oleh karena itu, pemanfaatan
+			machine learning di sini dapat menyelamatkan nyawa.
+			<br>
+			<br>
+			Dataset diambil dari Kaggle berjudul Heart Failure Prediction dengan 12 feature,
+			yaitu age, anaemia, creatinine_phosphokinase, diabetes, ejection_fraction, high_blood_pressure,
+			platelets, serum_creatinine, serum_sodium, dan sex.
+        </p>
+        <h3 style="text-align: center;font-weight:bolder;" class="text-muted">Dataset</h3>
+        <p style="text-align: justify;">
+            Dataset yang digunakan yaitu <a href="https://www.kaggle.com/andrewmvd/heart-failure-clinical-data"
+			style="text-decoration: none;"><b style="font-style: italic">Heart Failure Prediction</b></a> :
+			<br><br>
+			Dataset ini terdiri dari 13 atribut dengan 299 rows. Dalam kasus ini target dari hasil prediksi
+			keselamatan pasien dari penyakit jantung adalah DEATH_EVENT atau kematian
+        </p>
+        <ul style="text-transform: capitalize">
+			<li>age: umur pasien</li>
+			<li>anaemia: apakah ada pengurangan haemoglobin</li>
+			<li>creatinine_phosphokinase: level enzim CPK dalam mcg/L</li>
+			<li>diabetes: apakah pasien punya riwayat diabetes</li>
+			<li>ejection_fraction: persentase darah yang meninggalkan jantung dalam persentasi di setiap kontraksi
+			  jantung</li>
+			<li>high_blood_pressure: apakah pasien punya darah tinggi</li>
+			<li>platelets: jumlah platelet di darah dalam kiloplatelets/mL</li>
+			<li>serum_creatinine: level serum creatinine di darah dalam mg/dL</li>
+			<li>serum_sodium: level serum sodium di darah dalam mEq/L</li>
+			<li>sex: apakah pasien pria atau wanita</li>
+			<li>smoking: apakah pasien merokok</li>
+			<li>time: waktu dalam hari untuk follow-up</li>
+			<li>DEATH_EVENT: apakah pasien sudah meninggal saat waktu follow-up</li>
+		</ul>
+    </div>
+    <div id="work">
+        <h1>Plots.</h1>
+        <div id="photos">
+            <img onclick="magnify($(this).attr('src'))" src="static/images/categorical_distribution.png">
+            <img onclick="magnify($(this).attr('src'))" src="static/images/numerical_distribution.png">
+            <img onclick="magnify($(this).attr('src'))" src="static/images/death_event_pie.png">
+            <img onclick="magnify($(this).attr('src'))" src="static/images/death_event_bar.png">
+            <img onclick="magnify($(this).attr('src'))" src="static/images/feat_heatmap.png">
+            <img onclick="magnify($(this).attr('src'))" src="static/images/linear_regression.png">
+            <img onclick="magnify($(this).attr('src'))" src="static/images/gradient_booster_classifier.png">
+            <img onclick="magnify($(this).attr('src'))" src="static/images/random_forest_classifier.png">
+            <img onclick="magnify($(this).attr('src'))" src="static/images/support_vector_machine.png">
+            <img onclick="magnify($(this).attr('src'))" src="static/images/knn.png">
+            <img onclick="magnify($(this).attr('src'))" src="static/images/decision_tree_classifier.png">
+            <img onclick="magnify($(this).attr('src'))" src="static/images/extra_gradient_booster_classifier.png">
+        </div>
+    </div>
+    <div id="contact" class="contact">
+        <h1>Prediction.</h1>
+        <div class="container-sm">
+			<p>This prediction will be using Extra Gradient Booster Classifier model.</p>
+			<div class="row">
+	  
+				<div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+				  <form action="{{ url_for('predict')}}" method="post" class="php-email-form">
+					<div class="row">
+					  <div class="form-group">
+						<label for="age">Age</label>
+						<input type="number" class="form-control" name="age" id="age"
+						  placeholder="Insert value Age - Range (40 - 95)" required min="40" max="95">
+					  </div>
+					  <div class="form-group">
+						<label for="anaemia">Anaemia</label>
+						<select class="form-select" aria-label="Default select example" name="anaemia">
+						  <option selected>Choose for Anemia section</option>
+						  <option value="0">The patient does not have anemia</option>
+						  <option value="1">Patient has anemia</option>
+						</select>
+					  </div>
+					  <div class="form-group">
+						<label for="cpk_level">Creatinin Fosfokinase</label>
+						<input type="number" class="form-control" name="cpk_level" id="cpk_level"
+						  placeholder="Insert value Creatinin Fosfokinase - Range (23 - 7861)" required min="23" max="7861">
+					  </div>
+					  <div class="form-group">
+						<label for="diabetes">Diabetes</label>
+						<select class="form-select" aria-label="Default select example" name="diabetes">
+						  <option selected>Choose for Diabetes section</option>
+						  <option value="0">Patient does not have diabetes</option>
+						  <option value="1">Patient has diabetes</option>
+						</select>
+					  </div>
+					  <div class="form-group">
+						<label for="ejection_fraction">Ejection Fraction</label>
+						<select class="form-select" aria-label="Default select example" name="ejection_fraction">
+						  <option selected>Choose for Ejection Fraction section</option>
+						  <option value="14">14</option>
+						  <option value="15">15</option>
+						  <option value="17">17</option>
+						  <option value="20">20</option>
+						  <option value="25">25</option>
+						  <option value="30">30</option>
+						  <option value="35">35</option>
+						  <option value="38">38</option>
+						  <option value="40">40</option>
+						  <option value="45">45</option>
+						  <option value="50">50</option>
+						  <option value="55">55</option>
+						  <option value="60">60</option>
+						  <option value="62">62</option>
+						  <option value="65">65</option>
+						  <option value="70">70</option>
+						  <option value="80">80</option>
+						</select>
+					  </div>
+					  <div class="form-group">
+						<label for="high_blood_pressure">High Blood Pressure</label>
+						<select class="form-select" aria-label="Default select example" name="high_blood_pressure">
+						  <option selected>Choose for the High Blood Pressure section</option>
+						  <option value="0">The patient does not have high blood pressure</option>
+						  <option value="1">The patient has high blood pressure</option>
+						</select>
+					  </div>
+					  <div class="form-group">
+						<label for="platelets">Platelets</label>
+						<input type="number" class="form-control" name="platelets" id="platelets"
+						  placeholder="Insert value Platelets - Range (25100 - 850000)" required min="25100" max="850000">
+					  </div>
+					  <div class="form-group">
+						<label for="serum_creatinine">Serum Creatinine</label>
+						<input type="number" class="form-control" name="serum_creatinine" id="serum_creatinine"
+						  placeholder="Insert value Kreatinin Serum - Range (0 - 10)" required min="0" max="10">
+					  </div>
+					  <div class="form-group">
+						<label for="serum_sodium">Serum Sodium</label>
+						<input type="number" class="form-control" name="serum_sodium" id="serum_sodium"
+						  placeholder="Insert value Sodium Serum - Range (113 - 148)" required min="113" max="148">
+					  </div>
+					  <div class="form-group">
+						<label for="sex">Sex</label>
+						<select class="form-select" aria-label="Default select example" name="sex">
+						  <option selected>Choose for the Sex section</option>
+						  <option value="0">Perempuan</option>
+						  <option value="1">Laki-laki</option>
+						</select>
+					  </div>
+					  <div class="form-group">
+						<label for="smoking">Smoking</label>
+						<select class="form-select" aria-label="Default select example" name="smoking">
+						  <option selected>Choose for Smoking section</option>
+						  <option value="0">No</option>
+						  <option value="1">Yes</option>
+						</select>
+					  </div>
+					  <div class="form-group">
+						<label for="time">Time</label>
+						<input type="number" class="form-control" name="time" id="time"
+						  placeholder="Insert value Time - Range (4 - 285)" required min="4" max="285">
+					  </div>
+					  <div class="address">
+						<h4>Hasil Prediksi</h4>
+						<p>{{ prediction_text }}</p>
+					  </div>
+					  <div class="text-center"><button class="btn_one" type="submit">Predict</button></div>
+				  	</form>
+				</div>
+	  
+			</div>
+		</div>
+    </div>
+    <div id="footer">
+        made on earth by a human <br> <a href="https://github.com/qarisp">qarisp</a>
+    </div>
+    <script src="static/js/index.js" type="text/javascript"></script>
+</body>
+</html>
