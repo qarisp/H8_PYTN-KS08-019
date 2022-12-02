@@ -6,641 +6,155 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Final Project 1</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Comfortaa:700" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link rel="stylesheet" href="../static/css/index.css">
+    <link rel="stylesheet" href="static/css/index.css">
 </head>
 <body>
     <div id="loading">
         <div id="spinner"></div>
     </div>
-    <div id="header" class="animated slideInDown" style="animation-delay:1.8s;">
-    <div id="title">Final Project 1</div><br>
-    <div id="links">
-        <a href="#team">Team</a>
-        <a href="#about">About</a>
-        <a href="#plot" style="margin:0px 60px;">Plots</a>
-        <a href="#prediction">Prediction</a>
-        <a href="#contact">contact</a>
+    <div id="magnify">
+        <h1 onclick="closemagnify()"><i class="fas fa-times"></i></h1>
+        <div id="img_here"></div>
     </div>
+    <header id="header" class="animated slideInDown" style="animation-delay:1.8s;">
+        <table>
+            <tr>
+                <td id="logo">Final Project 1.</td>
+                <td id="navigation">
+                    <a href="#team">Team.</a>
+                    <a href="#bio">About.</a>
+                    <a href="#work">Plots.</a>
+                    <a href="#contact">Prediction.</a>
+                </td>
+            </tr>
+        </table>
+    </header>
+    <table id="top_part">
+        <tr>
+            <td id="about" class="animated slideInLeft" style="animation-delay:2s;">
+                <h1>Linear Regression</h1>
+                <!--<button class="btn_one">Contact</button><br>-->
+                <table>
+                    <tr>
+                        <td class="animated zoomIn" style="animation-delay:2.2s;"><a class="social" href="https://github.com/qarisp"><i class="fab fa-github"></i></a></td>
+                        <td class="animated zoomIn" style="animation-delay:2.4s;"><a class="social" href="https://www.linkedin.com/in/qaris-pratama-640960207/"><i class="fab fa-linkedin"></i></a></td>
+                        <td class="animated zoomIn" style="animation-delay:2.6s;"><a class="social" href="https://instagram.com/_qarisp"><i class="fab fa-instagram"></i></a></td>
+                    </tr>
+                </table>
+            </td>
+            <td id="rightImage" class="animated jackInTheBox" style="animation-delay:2.2s;"></td>
+        </tr>
+    </table>
+    <section id="team" class="team">
+        <div class="container">
+            <div class="section-title text-center">
+                <h1>The Team.</h1>
+                <p>This project is presented by:</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <div class="our-team">
+                    <div class="pic">
+                        <img src="{{ url_for('static', filename='images/qarisp.png') }}" class="center">
+                    </div>
+                    <div class="team-content">
+                        <h3 class="title">Qaris Ardian Pratama</h3>
+                        <span class="post">PYTN-KS08-019</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="bio" class="bio">
+        <h1>About.</h1>
+        <h3 style="text-align: center;font-weight:bolder;" class="text-muted">Abstract</h3>
+        <p style="text-align: justify;">
+            Teknologi memungkinkan budaya dan kebiasaan masyarakat berubah,
+            contohnya adalah ojek online yang mengubah budaya dan perilaku
+            masyarakat, terutama di kota besar. Ojek online yang memanfaatkan
+            teknologi memberikan solusi daripada beberapa masalah sosial di kota besar,
+            contohnya mengurangi kemacetan, memudahkan hubungan ojek-customer, membuka
+            lapangan pekerjaan, dll.
+            <br>
+            <br>
+            Ojek online paling populer di kota New York adalah Uber dan Lyft.
+            Untuk membantu dalam pemilihan ojek online dengan harga murah
+            dengan pertimbangan seperti cuaca, waktu, dan jarak, maka akan
+            dibuat model prediksi harga ojek online di kota New York menggunakan
+            dataset dari Kaggle berjudul Uber and Lyft Dataset Boston, MA.
+            Terdapat 693071 baris data yang memiliki 57 kolom.
+        </p>
+        <h3 style="text-align: center;font-weight:bolder;" class="text-muted">Dataset</h3>
+        <p style="text-align: justify;">
+            Dataset yang digunakan yaitu <b>Uber vs Lyft Dataset New York, USA</b> yang berisi
+            record data perjalanan
+            taksi online Uber dan Lyft di New York, USA. Dataset ini memiliki 57 feature, tetapi
+            yang paling relevan ada
+            13 feature dan yang digunakan untuk prediksi ada 6 feature. Dari 57 feature, data yang digunakan untuk proyek ini
+            antara lain:
+        </p>
+        <ul>
+            <li>Cab_type: Merek transportasi online (Uber, Lyft).</li>
+            <li>Name: Jenis mobil yang dipilih (Lux, Lux Black XL, Lyft, Lyft XL, UberXL, Taxi,
+                Uberpool, Black SUV, WAV, Black, UberX, Lux Black, Shared).</li>
+            <li>Hour: Pukul berapa transportasi online dipesan (24 jam).</li>
+            <li>Day: Tanggal berapa transportasi online dipesan.</li>
+            <li>Month: Bulan apa saja transportasi online dipesan (bulan 11 dan 12).</li>
+            <li>Source: Destinasi awal.</li>
+            <li>Destination: Destinasi akhir.</li>
+            <li>Price: Harga transportasi online (dollar US).</li>
+            <li>Distance: Jarak yang ditempuh (km).</li>
+            <li>Short_summary: Cuaca ketika transportasi online dipesan (Overcast, Mostly
+                Cloudy, Partly Cloudy, Clear, Light Rain, Rain, Possible Drizzle, Foggy,
+                Drizzle).</li>
+            <li>Temperature: Suhu ketika transportasi online dipesan (Celcius).</li>
+            <li>Visibility: Jarak penglihatan.</li>
+            <li>Surge_multiplier: Kenaikan harga penawaran ketika terjadi lonjakan penumpang.
+            </li>
+        </ul>
     </div>
-
-    <center>
-    <div id="middle">
-        <div id="tagline" class="animated zoomIn" style="animation-delay:1.8s;">
-            if you're reading this, that mean's you can read<br>
-            <button class="btn_one">haha ok</button>
+    <div id="work">
+        <h1>Plots.</h1>
+        <div id="photos">
+            <img onclick="magnify($(this).attr('src'))" src="static/images/ubervslyft_bar.png">
+            <img onclick="magnify($(this).attr('src'))" src="static/images/month_pie.png">
+            <img onclick="magnify($(this).attr('src'))" src="static/images/day_bar.png">
+            <img onclick="magnify($(this).attr('src'))" src="static/images/hour_bar.png">
+            <img onclick="magnify($(this).attr('src'))" src="static/images/source_bar.png">
+            <img onclick="magnify($(this).attr('src'))" src="static/images/destination_bar.png">
+            <img onclick="magnify($(this).attr('src'))" src="static/images/temperature_feat.png">
+            <img onclick="magnify($(this).attr('src'))" src="static/images/climate_feat.png">
+            <img onclick="magnify($(this).attr('src'))" src="static/images/promising_feat.png">
+            <img onclick="magnify($(this).attr('src'))" src="static/images/price_box.png">
+            <img onclick="magnify($(this).attr('src'))" src="static/images/linear_regression.png">
+            <img onclick="magnify($(this).attr('src'))" src="static/images/random_forest.png">
+            <img onclick="magnify($(this).attr('src'))" src="static/images/decision_tree.png">
         </div>
     </div>
-    </center>
-
-    <div id="portfolio">
-             <section id="team" class="team section-bg">
-                <div class="container" data-aos="fade-up">
-          
-                  <div class="section-title">
-                    <h2>Team</h2>
-                    <p>This Final Project 1 was made by:</p>
-                  </div>
-          
-                  <div class="row">
-          
-                    <div class="col-lg-6">
-                      <div class="member d-flex align-items-start" data-aos="zoom-in">
-                        <div class="pic"><img src="{{ url_for('static', filename='images/images.jpeg') }}" class="img-fluid"
-                            alt=""></div>
-                        <div class="member-info">
-                          <h4>Qaris Ardian Pratama</h4>
-                          <span>Studi Independen</span>
-                          <p>PYTN-KS04-019</p>
-                          <div class="social">
-                            <a href="https://github.com/zulvaaf"><i class="fa-brands fa-github"></i></a>
-                            <a href="https://www.linkedin.com/in/ahmadfirdauszulva111/"><i class="fa-brands fa-linkedin"></i></a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-          
-                  </div>
-          
-                </div>
-              </section>
-
-              <div id="about">
-                <h1>About</h1>   
-                <div class="container">
-                    <div class="row">
-                        <div class="">
-                            <div class="message-box">
-                                <div class="section-title text-center">
-                                    <h3>Explanation</h3>
-                                    <p>In this section, there is a description of the abstract and also a description of the
-                                        data.
-                                    </p>
-                                </div><!-- end title -->
-
-                                <div class="tab-content mt-3" id="nav-tabContent">
-                                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel"
-                                        aria-labelledby="nav-home-tab">
-                                        <h3 style="text-align:center;font-weight:bolder; " class="text-muted">Dataset</h3>
-                                        <p style='text-align: justify;'>
-                                            Dataset yang digunakan yaitu <b>Uber vs Lyft Dataset New York, USA</b> yang berisi
-                                            record data perjalanan
-                                            taksi online Uber dan Lyft di New York, USA. Dataset ini memiliki 57 atribut, tetapi
-                                            yang paling relevan ada
-                                            contact   <li>Name: Jenis mobil yang dipilih (Lux, Lux Black XL, Lyft, Lyft XL, UberXL, Taxi,
-                                                Uberpool, Black SUV, WAV, Black, UberX, Lux Black, Shared).</li>
-                                            <li>Hour: Pukul berapa transportasi online dipesan (24 jam).</li>
-                                            <li>Day: Tanggal berapa transportasi online dipesan.</li>
-                                            <li>Month: Bulan apa saja transportasi online dipesan (bulan 11 dan 12).</li>
-                                            <li>Source: Destinasi awal.</li>
-                                            <li>Destination: Destinasi akhir.</li>
-                                            <li>Price: Harga transportasi online (dollar US).</li>
-                                            <li>Distance: Jarak yang ditempuh (km).</li>
-                                            <li>Short_summary: Cuaca ketika transportasi online dipesan (Overcast, Mostly
-                                                Cloudy, Partly Cloudy, Clear, Light Rain, Rain, Possible Drizzle, Foggy,
-                                                Drizzle).</li>
-                                            <li>Temperature: Suhu ketika transportasi online dipesan (Celcius).</li>
-                                            <li>Visibility: Jarak penglihatan.</li>
-                                            <li>Surge_multiplier: Kenaikan harga penawaran ketika terjadi lonjakan penumpang.
-                                            </li>
-                                        </ul>
-                                    </div>
-        
-                                    <div class="tab-pane fade" id="nav-profile" role="tabpanel"
-                                        aria-labelledby="nav-profile-tab">
-                                        <h3 style="text-align:center;font-weight:bolder;" class=" text-muted">Abstract</h3>
-                                        <p style='text-align: justify;'>
-                                            Perkembangan teknologi saat ini sangat pesat, sehingga dapat mengubah gaya hidup
-                                            masyarakat sebelumnya. Ini
-                                            sangat memudahkan pekerjaan masyarakat dalam banyak hal, misalnya mobilitas
-                                            perjalanan. Meningkatnya akses
-                                            internet melalui smartphone di kalangan masyarakat dunia mengundang hadirnya
-                                            transportasi online. Pada tahun
-                                            2018, New York telah menunjukkan peningkatan yang kuat dalam aktivitas bisnis,
-                                            sementara juga memimpin skor
-                                            global dalam human capital. Hal ini berarti, New York menjadi salah satu kota paling
-                                            berpengaruh di dunia
-                                            (Kearney, Global Cities Report 2018).</p>
-        
-                                        <p style='text-align: justify;'>
-                                            Di New York, ride-hailing yang paling populer adalah Uber dan Lyft. Secara umum,
-                                            tidak terdapat banyak
-                                            perbedaan dari segi biaya dan waktu antara moda ride-hailing dengan taksi.
-                                            Keunggulan moda ride-hailing
-                                            dibandingkan dengan taksi adalah dalam aspek kenyamanan. Calon penumpang tidak harus
-                                            menunggu di pinggir
-                                            jalan, namun dapat menggunakan aplikasi pada smartphone untuk memanggil pengemudi.
-                                        </p>
-        
-                                        <p style='text-align: justify;'>
-                                            Untuk membantu masyarakat New York City dalam memilih transportasi online yang
-                                            terbaik dengan harga murah
-                                            berdasarkan berbagai macam pertimbangan, seperti cuaca, hari, dan jarak, maka akan
-                                            dibuat sebuah Aplikasi
-                                            Prediksi Harga Transportasi Online (Uber dan Lyft) di New York City dengan
-                                            Menggunakan Perbandingan Metode
-                                            Linear Regression dan Random Forest </p>
-                                    </div>
-                                </div>
-                            </div><!-- end messagebox -->
-                        </div><!-- end col -->
-                    </div><!-- end row -->
-                </div><!-- end container -->
-             </div>
-         
-              <div id="plot">
-                 <h1>Plots.</h1>
-
-                <div id="portfolio" class="section lb" data-aos="fade-up">
-                    <div class=" container">
-                        <div class="section-title text-center">
-                            <h3>Chart</h3>
-                            <p>A chart can represent tabular numeric data, functions or some kinds of quality structure and provides
-                                different info.
-                            </p>
-                        </div><!-- end title -->         
-            
-            
-                        <div class="gallery-list row">
-                            <!-- Gal_A Section -->
-                            <!-- 1 -->
-                            <div class="col-md-4 col-sm-6 gallery-grid gal_a">
-                                <div>
-                                    <div class="uk-card-hover bg-transparent">
-                                        <!-- Animate png -->
-                                        <div class="uk-animation-toggle" tabindex="0">
-                                            <div>
-                                                <a class="uk-inline"
-                                                    href="{{ url_for('static', filename='images/ubervslyft_bar.png') }}"
-                                                    data-caption="Transport Name">
-                                                    <img src="{{ url_for('static', filename='images/ubervslyft_bar.png') }}" alt=""
-                                                        width="720" height="480">
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <p style="text-align:center;font-family:'Segoe UI';font-weight: bolder;" class="text-dark">
-                                            Transport Name Bar Chart</p>
-                                    </div>
-                                </div>
-                            </div>            
-                            <!-- Gal_B Section -->
-                            <!-- 3 -->
-                            <div class="col-md-4 col-sm-6 gallery-grid gal_b">
-                                <div>
-                                    <div class="uk-card-hover bg-transparent">
-                                        <!-- Animate png -->
-                                        <div class="uk-animation-toggle" tabindex="0">
-                                            <div>
-                                                <a class="uk-inline"
-                                                    href="{{ url_for('static', filename='images/month_pie.png') }}"
-                                                    data-caption="Month">
-                                                    <img src="{{ url_for('static', filename='images/month_pie.png') }}" alt=""
-                                                        width="720" height="480">
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <p style="text-align:center;font-family:'Segoe UI';font-weight: bolder;" class="text-dark">
-                                            Month Pie Chart</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-6 gallery-grid gal_b">
-                                <div>
-                                    <div class="uk-card-hover bg-transparent">
-                                        <!-- Animate png -->
-                                        <div class="uk-animation-toggle" tabindex="0">
-                                            <div>
-                                                <a class="uk-inline"
-                                                    href="{{ url_for('static', filename='images/price_box.png') }}"
-                                                    data-caption="Month">
-                                                    <img src="{{ url_for('static', filename='images/price_box.png') }}" alt=""
-                                                        width="720" height="480">
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <p style="text-align:center;font-family:'Segoe UI';font-weight: bolder;" class="text-dark">
-                                            Price Analysis Box Plot</p>
-                                    </div>
-                                </div>
-                            </div>
-            
-                            <!-- Gal_C Section -->
-                            <!-- 1 -->
-                            <div class="col-md-4 col-sm-6 gallery-grid gal_c">
-                                <div>
-                                    <div class="uk-card-hover bg-transparent">
-                                        <!-- Animate png -->
-                                        <div class="uk-animation-toggle" tabindex="0">
-                                            <div>
-                                                <a class="uk-inline"
-                                                    href="{{ url_for('static', filename='images/linear_regression.png') }}"
-                                                    data-caption="Linear Regression">
-                                                    <img src="{{ url_for('static', filename='images/linear_regression.png') }}"
-                                                        alt="" width="720" height="480">
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <p style="text-align:center;font-family:'Segoe UI';font-weight: bolder;" class="text-dark">
-                                            Linear Regression Analysis Chart</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- 2 -->
-                            <div class="col-md-4 col-sm-6 gallery-grid gal_c">
-                                <div>
-                                    <div class="uk-card-hover bg-transparent">
-                                        <!-- Animate png -->
-                                        <div class="uk-animation-toggle" tabindex="0">
-                                            <div>
-                                                <a class="uk-inline"
-                                                    href="{{ url_for('static', filename='images/random_forest.png') }}"
-                                                    data-caption="Random Forest">
-                                                    <img src="{{ url_for('static', filename='images/random_forest.png') }}" alt=""
-                                                        width="720" height="480">
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <p style="text-align:center;font-family:'Segoe UI';font-weight: bolder;" class="text-dark">
-                                            Random Forest Analysis Chart</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- 3 -->
-                            <div class="col-md-4 col-sm-6 gallery-grid gal_c">
-                                <div>
-                                    <div class="uk-card-hover bg-transparent">
-                                        <!-- Animate png -->
-                                        <div class="uk-animation-toggle" tabindex="0">
-                                            <div>
-                                                <a class="uk-inline"
-                                                    href="{{ url_for('static', filename='images/decision_tree.png') }}"
-                                                    data-caption="Decision Tree">
-                                                    <img src="{{ url_for('static', filename='images/decision_tree.png') }}" alt=""
-                                                        width="720" height="480">
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <p style="text-align:center;font-family:'Segoe UI';font-weight: bolder;" class="text-dark">
-                                            Decision Tree Analysis Chart</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- 4 -->
-                            <div class="col-md-4 col-sm-6 gallery-grid gal_c">
-                                <div>
-                                    <div class="uk-card-hover bg-transparent">
-                                        <!-- Animate png -->
-                                        <div class="uk-animation-toggle" tabindex="0">
-                                            <div>
-                                                <a class="uk-inline"
-                                                    href="{{ url_for('static', filename='images/temperature_feat.png') }}"
-                                                    data-caption="Correlation Heat Map">
-                                                    <img src="{{ url_for('static', filename='images/temperature_feat.png') }}" alt=""
-                                                        width="720" height="480">
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <p style="text-align:center;font-family:'Segoe UI';font-weight: bolder;" class="text-dark">
-                                            Temperature Correlation Heat Map Analysis Chart</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-6 gallery-grid gal_c">
-                                <div>
-                                    <div class="uk-card-hover bg-transparent">
-                                        <!-- Animate png -->
-                                        <div class="uk-animation-toggle" tabindex="0">
-                                            <div>
-                                                <a class="uk-inline"
-                                                    href="{{ url_for('static', filename='images/climate_feat.png') }}"
-                                                    data-caption="Correlation Heat Map">
-                                                    <img src="{{ url_for('static', filename='images/climate_feat.png') }}" alt=""
-                                                        width="720" height="480">
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <p style="text-align:center;font-family:'Segoe UI';font-weight: bolder;" class="text-dark">
-                                            Climate Correlation Heat Map Analysis Chart</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-6 gallery-grid gal_c">
-                                <div>
-                                    <div class="uk-card-hover bg-transparent">
-                                        <!-- Animate png -->
-                                        <div class="uk-animation-toggle" tabindex="0">
-                                            <div>
-                                                <a class="uk-inline"
-                                                    href="{{ url_for('static', filename='images/promising_feat.png') }}"
-                                                    data-caption="Correlation Heat Map">
-                                                    <img src="{{ url_for('static', filename='images/promising_feat.png') }}" alt=""
-                                                        width="720" height="480">
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <p style="text-align:center;font-family:'Segoe UI';font-weight: bolder;" class="text-dark">
-                                            Correlation Heat Map Analysis Chart</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-             </div>
-
-             <!-- ======= Chart Section ======= -->
-    <section id="portfolio" class="portfolio">
-        <div class="container" data-aos="fade-up">
-  
-          <div class="section-title">
-            <h2>Chart</h2>
-            <p>A chart can represent tabular numeric data, functions or some kinds of quality structure and provides
-              different info.</p>
-          </div>
-  
-          <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up">
-            <li data-filter="*" class="filter-active">All Graphic Plot</li>
-            <li data-filter=".filter-app">Prediction Graph using the SMOTE method</li>
-            <li data-filter=".filter-card">Prediction Graph does not use the SMOTE method</li>
-            <li data-filter=".filter-web">Random Plot</li>
-          </ul>
-  
-          <div class="row portfolio-container" data-aos="fade-up">
-  
-            <!-- Chart Section 1 -->
-            <div>
-              <!-- d-1 -->
-              <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                <div class="portfolio-img"><img src="{{ url_for('static', filename='images/ubervslyft_bar.png') }}"
-                    class="img-fluid" alt="">
-                </div>
-                <div class="portfolio-info">
-                  <h4>Extra Trees Classifier</h4>
-                  <p>Dengan menggunakan metode SMOTE</p>
-                </div>
-              </div>
-              <!-- d-2 -->
-              <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                <div class="portfolio-img"><img src="{{ url_for('static', filename='img/portfolio/smote_knn.png') }}"
-                    class="img-fluid" alt=""></div>
-                <div class="portfolio-info">
-                  <h4>KNN Classifier</h4>
-                  <p>Dengan menggunakan metode SMOTE</p>
-                </div>
-              </div>
-              <!-- d-3 -->
-              <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                <div class="portfolio-img"><img src="{{ url_for('static', filename='img/portfolio/smote_svm.png') }}"
-                    class="img-fluid" alt="">
-                </div>
-                <div class="portfolio-info">
-                  <h4>SVM Classifier</h4>
-                  <p>Dengan menggunakan metode SMOTE</p>
-                </div>
-              </div>
-              <!-- d-4 -->
-              <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                <div class="portfolio-img"><img src="{{ url_for('static', filename='img/portfolio/smote_rf.png') }}"
-                    class="img-fluid" alt=""></div>
-                <div class="portfolio-info">
-                  <h4>Random Forest Classifier</h4>
-                  <p>Dengan menggunakan metode SMOTE</p>
-                </div>
-              </div>
-              <!-- d-5 -->
-              <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                <div class="portfolio-img"><img src="{{ url_for('static', filename='img/portfolio/smote_logreg.png') }}"
-                    class="img-fluid" alt="">
-                </div>
-                <div class="portfolio-info">
-                  <h4>Logistic Regression Classifier</h4>
-                  <p>Dengan menggunakan metode SMOTE</p>
-                </div>
-              </div>
-              <!-- d-6 -->
-              <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                <div class="portfolio-img"><img src="{{ url_for('static', filename='img/portfolio/smote_xgboost.png') }}"
-                    class="img-fluid" alt="">
-                </div>
-                <div class="portfolio-info">
-                  <h4>XGBooster Classifier</h4>
-                  <p>Dengan menggunakan metode SMOTE</p>
-                </div>
-              </div>
-              <!-- d-7 -->
-              <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                <div class="portfolio-img"><img src="{{ url_for('static', filename='img/portfolio/smote_gb.png') }}"
-                    class="img-fluid" alt="">
-                </div>
-                <div class="portfolio-info">
-                  <h4>Gradient Booster Classifier</h4>
-                  <p>Dengan menggunakan metode SMOTE</p>
-                </div>
-              </div>
-              <!-- end of chart section - section 1 -->
+    <div id="contact" class="contact">
+        <h1>Prediction.</h1>
+        <div class="container">
+            <div class="section-title text-center">
+                <p class="text-dark">
+                    The prediction will be using two model, Linear Regression and Decision Tree.
+                </p>
             </div>
-  
-            <!-- Chart Section 2 -->
-            <div>
-              <!-- a-1 -->
-              <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                <div class="portfolio-img"><img src="{{ url_for('static', filename='img/portfolio/etc.png') }}"
-                    class="img-fluid" alt=""></div>
-                <div class="portfolio-info">
-                  <h4>Extra Trees Classifier</h4>
-                  <p>Tidak menggunaan metode SMOTE</p>
-                </div>
-              </div>
-              <!-- a-2 -->
-              <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                <div class="portfolio-img"><img src="{{ url_for('static', filename='img/portfolio/knn.png') }}"
-                    class="img-fluid" alt=""></div>
-                <div class="portfolio-info">
-                  <h4>KNN Classifier</h4>
-                  <p>Tidak menggunaan metode SMOTE</p>
-                </div>
-              </div>
-              <!-- a-3 -->
-              <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                <div class="portfolio-img"><img src="{{ url_for('static', filename='img/portfolio/svm.png') }}"
-                    class="img-fluid" alt="">
-                </div>
-                <div class="portfolio-info">
-                  <h4>SVM Classifier</h4>
-                  <p>Tidak menggunaan metode SMOTE</p>
-                </div>
-              </div>
-              <!-- a-4 -->
-              <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                <div class="portfolio-img"><img src="{{ url_for('static', filename='img/portfolio/rf.png') }}"
-                    class="img-fluid" alt=""></div>
-                <div class="portfolio-info">
-                  <h4>Random Forest Classifier</h4>
-                  <p>Tidak menggunaan metode SMOTE</p>
-                </div>
-              </div>
-              <!-- a-5 -->
-              <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                <div class="portfolio-img"><img src="{{ url_for('static', filename='img/portfolio/logreg.png') }}"
-                    class="img-fluid" alt="">
-                </div>
-                <div class="portfolio-info">
-                  <h4>Logistic Regression Classifier</h4>
-                  <p>Tidak menggunaan metode SMOTE</p>
-                </div>
-              </div>
-              <!-- a-6 -->
-              <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                <div class="portfolio-img"><img src="{{ url_for('static', filename='img/portfolio/xgboost.png') }}"
-                    class="img-fluid" alt="">
-                </div>
-                <div class="portfolio-info">
-                  <h4>XGBooster Classifier</h4>
-                  <p>Tidak menggunaan metode SMOTE</p>
-                </div>
-              </div>
-              <!-- a-7 -->
-              <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                <div class="portfolio-img"><img src="{{ url_for('static', filename='img/portfolio/gb.png') }}"
-                    class="img-fluid" alt="">
-                </div>
-                <div class="portfolio-info">
-                  <h4>Gradient Booster Classifier</h4>
-                  <p>Tidak menggunaan metode SMOTE</p>
-                </div>
-              </div>
-              <!-- end of chart section - section 2 -->
-            </div>
-  
-            <!-- Chart Section 3 -->
-            <div>
-              <!-- b-1 -->
-              <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                <div class="portfolio-img"><img src="{{ url_for('static', filename='img/portfolio/corr.png') }}"
-                    class="img-fluid" alt=""></div>
-                <div class="portfolio-info">
-                  <h4>Correlation Plot</h4>
-                </div>
-              </div>
-              <!-- b-2 -->
-              <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                <div class="portfolio-img"><img src="{{ url_for('static', filename='img/portfolio/hist_dist.png') }}"
-                    class="img-fluid" alt=""></div>
-                <div class="portfolio-info">
-                  <h4>Distribution Plot</h4>
-                </div>
-              </div>
-              <!-- end of chart section - section 3 -->
-            </div>
-          </div>
-        </div>
-      </section><!-- End Chart Section -->
+            <div class="container-sm">
+                <div class="row">
+                    <div class="col-9">
 
-             <div id="prediction">
-                <h1>Prediction.</h1> 
-                <div class="tab-content" id="v-pills-tabContent">
-                    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
-                        aria-labelledby="v-pills-home-tab">
-                        <h3 style="text-align:center;font-weight:bolder;">Linear Regression</h3>
-                        <form action="{{ url_for('predict_2')}}" method="post">
-                            <div class="form-group">
-                                <label for="transport_name">Transport Name</label>
-                                <select class="form-control" id="transport_name" name="transport_name"
-                                    required="required">
-                                    <option>-- Choose a Transport Name --</option>
-                                    <option value="0">Lyft</option>
-                                    <option value="1">Uber</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="kind">Service Type</label>
-                                <select class="form-control" id="kind" name="kind" required="required">
-                                    <option>-- Choose a Service Type --</option>
-                                    <option value="0">Uber XL</option>
-                                    <option value="1">Uber WAV</option>
-                                    <option value="2">Uber Black SUV</option>
-                                    <option value="3">Uber Black</option>
-                                    <option value="4">Uber X</option>
-                                    <option value="5">Uber Pool</option>
-                                    <option value="6">Uber Lux</option>
-                                    <option value="7">Lyft Taxi</option>
-                                    <option value="8">Lyft Black XL</option>
-                                    <option value="9">Lyft XL</option>
-                                    <option value="10">Lyft Black</option>
-                                    <option value="11">Lyft Shared</option>
-                                </select>
-                            </div>
-                            <div class="form-row">
-                            </div>
-                            <div class="form-group">
-                                <label for="distance">Distance</label>
-                                <input type="number" name="distance" class="form-control" id="distance"
-                                    placeholder="Insert Distance (0 - 548)" min="0" max="548"
-                                    required="required">
-                            </div>
-                            <div class="form-group">
-                                <label for="weather">Weather</label>
-                                <select class="form-control" id="weather" name="weather" required="required">
-                                    <option>-- Choose a Weather Condition --</option>
-                                    <option value="0">Overcast</option>
-                                    <option value="1">Mostly Cloudy</option>
-                                    <option value="2">Party Cloudy</option>
-                                    <option value="3">Clear</option>
-                                    <option value="4">Light Rain</option>
-                                    <option value="5">Rain</option>
-                                    <option value="6">Possible Drizzle</option>
-                                    <option value="7">Foggy</option>
-                                    <option value="8">Drizzle</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="hour">Hour</label>
-                                <input type="number" name="hour" class="form-control" id="hour"
-                                    placeholder="Insert Hour (0 - 23)" min="0" max="23"
-                                    required="required">
-                            </div>
-                            <div class="form-group">
-                                <label for="surge_multiplier">Surge Multiplier Pricing</label>
-                                <select class="form-control" id="surge_multiplier" name="surge_multiplier"
-                                    required="requiredform>
-                                    <input type="text" placeholder="name" required>
-                                </form> 
-                                    <option>-- Choose a Surge Multiplier Pricing --</option>
-                                    <option value="0">$1.00</option>
-                                    <option value="1">$1.25</option>
-                                    <option value="2">$1.50</option>
-                                    <option value="3">$1.75</option>
-                                    <option value="4">$2.00</option>
-                                    <option value="5">$2.50</option>
-                                    <option value="6">$3.00</option>
-                                </select>
-                            </div>
-                            <div class="card text-center">
-                                <div class="card-header bg-dark text-white font-weight-bold">
-                                    Hasil Prediksi Linear Regression
-                                </div>
-                                <div class="card-body">
-                                    <p class="card-text">{{ prediction_text_2 }}</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-12 text-center mt-3 mb-5">
-                                <div id="success"></div>
-                                <button class="sim-btn hvr-bounce-to-top" type="submit">Prediksi</button>
-                            </div>
-                        </form>
-                    </div>
-
-                    <!-- Decision Tree Section -->
-                            <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
-								aria-labelledby="v-pills-profile-tab">
-								<h3 style="text-align:center;font-weight:bolder;">Decision Tree</h3>
-								<form action="{{ url_for('predict_1')}}" method="post">
+						<!-- Linear Regression Section -->
+						<div class="tab-content" id="v-pills-tabContent">
+							<div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
+								aria-labelledby="v-pills-home-tab">
+								<h3 style="text-align:center;font-weight:bolder;">Linear Regression</h3>
+								<form action="{{ url_for('predict_2')}}" method="post">
 									<div class="form-group">
-										<label for="transport_name">Transport Name</label>
-										<select class="form-control" id="transport_name" name="transport_name"
+										<label for="cab_type">Transport Name</label>
+										<select class="form-control" id="cab_type" name="cab_type"
 											required="required">
 											<option>-- Choose a Transport Name --</option>
 											<option value="0">Lyft</option>
@@ -648,8 +162,8 @@
 										</select>
 									</div>
 									<div class="form-group">
-										<label for="kind">Service Type</label>
-										<select class="form-control" id="kind" name="kind" required="required">
+										<label for="name">Service Type</label>
+										<select class="form-control" id="name" name="name" required="required">
 											<option>-- Choose a Service Type --</option>
 											<option value="0">Uber XL</option>
 											<option value="1">Uber WAV</option>
@@ -666,14 +180,14 @@
 										</select>
 									</div>
 									<div class="form-group">
-										<label for="distance">Distance</label>
-										<input type="number" name="distance" class="form-control" id="distance"
-											placeholder="Insert Distance (0 - 548)" min="0" max="548"
+										<label for="hour">Hour</label>
+										<input type="number" name="hour" class="form-control" id="hour"
+											placeholder="Insert Hour Range (0 - 23)" min="0" max="23"
 											required="required">
 									</div>
 									<div class="form-group">
-										<label for="weather">Weather</label>
-										<select class="form-control" id="weather" name="weather" required="required">
+										<label for="short_summary">Weather</label>
+										<select class="form-control" id="short_summary" name="short_summary" required="required">
 											<option>-- Choose a Weather Condition --</option>
 											<option value="0">Overcast</option>
 											<option value="1">Mostly Cloudy</option>
@@ -687,9 +201,97 @@
 										</select>
 									</div>
 									<div class="form-group">
+										<label for="distance">Distance</label>
+										<input type="number" step="0.01" name="distance" class="form-control" id="distance"
+											placeholder="Insert Distance Range (0 - 548)" min="0" max="548"
+											required="required">
+									</div>
+									<div class="form-group">
+										<label for="surge_multiplier">Surge Multiplier Pricing</label>
+										<select class="form-control" id="surge_multiplier" name="surge_multiplier"
+											required="required">
+											<option>-- Choose a Surge Multiplier Pricing --</option>
+											<option value="0">$1.00</option>
+											<option value="1">$1.25</option>
+											<option value="2">$1.50</option>
+											<option value="3">$1.75</option>
+											<option value="4">$2.00</option>
+											<option value="5">$2.50</option>
+											<option value="6">$3.00</option>
+										</select>
+									</div>
+									<div class="card text-center">
+										<div class="card-header bg-dark text-white font-weight-bold">
+											Hasil Prediksi Linear Regression
+										</div>
+										<div class="card-body">
+											<p class="card-text">{{ prediction_text_2 }}</p>
+										</div>
+									</div>
+									<div class="col-lg-12 text-center mt-3 mb-5">
+										<div id="success"></div>
+										<button class="btn_one" type="submit">Prediksi</button>
+									</div>
+								</form>
+							</div>
+
+							<!-- Decision Tree Section -->
+							<div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
+								aria-labelledby="v-pills-profile-tab">
+								<h3 style="text-align:center;font-weight:bolder;">Decision Tree</h3>
+								<form action="{{ url_for('predict_1')}}" method="post">
+									<div class="form-group">
+										<label for="cab_type">Transport Name</label>
+										<select class="form-control" id="cab_type" name="cab_type"
+											required="required">
+											<option>-- Choose a Transport Name --</option>
+											<option value="0">Lyft</option>
+											<option value="1">Uber</option>
+										</select>
+									</div>
+									<div class="form-group">
+										<label for="name">Service Type</label>
+										<select class="form-control" id="name" name="name" required="required">
+											<option>-- Choose a Service Type --</option>
+											<option value="0">Uber XL</option>
+											<option value="1">Uber WAV</option>
+											<option value="2">Uber Black SUV</option>
+											<option value="3">Uber Black</option>
+											<option value="4">Uber X</option>
+											<option value="5">Uber Pool</option>
+											<option value="6">Uber Lux</option>
+											<option value="7">Lyft Taxi</option>
+											<option value="8">Lyft Black XL</option>
+											<option value="9">Lyft XL</option>
+											<option value="10">Lyft Black</option>
+											<option value="11">Lyft Shared</option>
+										</select>
+									</div>
+									<div class="form-group">
 										<label for="hour">Hour</label>
 										<input type="number" name="hour" class="form-control" id="hour"
-											placeholder="Insert Hour (0 - 23)" min="0" max="23"
+											placeholder="Insert Hour Range (0 - 23)" min="0" max="23"
+											required="required">
+									</div>
+									<div class="form-group">
+										<label for="short_summary">Weather</label>
+										<select class="form-control" id="short_summary" name="short_summary" required="required">
+											<option>-- Choose a Weather Condition --</option>
+											<option value="0">Overcast</option>
+											<option value="1">Mostly Cloudy</option>
+											<option value="2">Party Cloudy</option>
+											<option value="3">Clear</option>
+											<option value="4">Light Rain</option>
+											<option value="5">Rain</option>
+											<option value="6">Possible Drizzle</option>
+											<option value="7">Foggy</option>
+											<option value="8">Drizzle</option>
+										</select>
+									</div>
+									<div class="form-group">
+										<label for="distance">Distance</label>
+										<input type="number" step="0.01" name="distance" class="form-control" id="distance"
+											placeholder="Insert Distance Range (0 - 548)" min="0" max="548"
 											required="required">
 									</div>
 									<div class="form-group">
@@ -716,35 +318,19 @@
 									</div>
 									<div class="col-lg-12 text-center mt-3 mb-5">
 										<div id="success"></div>
-										<button class="sim-btn hvr-bounce-to-top" type="submit">Prediksi</button>
+										<button class="btn_one" type="submit">Prediksi</button>
 									</div>
 								</form>
 							</div>
+						</div>
+					</div>
                 </div>
-                
-             </div>
-         
-             
-
-              <div id="contact">
-                 <h1>contact.</h1> 
-                 <form>
-                     <input type="text" placeholder="name" required>
-                     <input type="email" placeholder="email" required><br>
-                     <textarea placeholder="your message" required rows="5"></textarea><br>
-                     <button class="btn_one">send</button>
-                 </form> 
-                 <div id="details">
-                    <a class="btn_social"><i class="fas fa-phone"></i></a>
-                    <a class="btn_social"><i class="fas fa-at"></i></a>
-                    <a class="btn_social"><i class="fab fa-twitter"></i></a>
-                    <a class="btn_social"><i class="fab fa-dribbble"></i></a>
-                 </div>   
-             </div>
+            </div>
+        </div>
     </div>
     <div id="footer">
-        made on earth by a human <br><br> <a href="https://imfunniee.github.io">imfunniee</a>
+        made on earth by a human <br> <a href="https://github.com/qarisp">qarisp</a>
     </div>
-<script src="../static/js/index.js" type="text/javascript"></script>
+    <script src="static/js/index.js" type="text/javascript"></script>
 </body>
 </html>
